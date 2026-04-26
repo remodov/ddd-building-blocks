@@ -5,10 +5,11 @@ plugins {
 
 val libVersion = libs.versions.ddd.building.blocks.get()
 
-group = "ru.badgermock"
+group = "ru.vikulinva"
 version = libVersion
 
 java {
+    toolchain { languageVersion.set(JavaLanguageVersion.of(21)) }
     withSourcesJar()
 }
 
@@ -21,7 +22,7 @@ publishing {
         create<MavenPublication>("maven") {
             from(components["java"])
 
-            groupId = "ru.badgermock"
+            groupId = "ru.vikulinva"
             artifactId = "ddd-building-blocks"
             version = libVersion
         }
